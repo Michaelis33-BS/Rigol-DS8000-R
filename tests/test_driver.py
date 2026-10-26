@@ -1,4 +1,5 @@
-"""Static and simulated instrument tests. Creator: Jeff Michaelis."""
+"""Static and simulated instrument tests."""
+# Creator: Jeff Michaelis
 import csv
 import json
 from pathlib import Path
@@ -87,7 +88,7 @@ def test_offline_smoke_and_scpi_error_reporting(tmp_path):
     name=tmp_path/"report.json"
     log.export(name)
     data=json.loads(name.read_text())
-    assert data["creator"]=="Jeff Michaelis"
+    assert data["package"]=="Rigol-DS8000-R"
     assert len(data["results"]) >= 9
 
 

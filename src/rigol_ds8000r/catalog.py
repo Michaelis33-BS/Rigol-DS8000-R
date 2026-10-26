@@ -1,11 +1,11 @@
 """Machine-readable command inventory extracted from the DS8000-R guide.
 
-Creator: Jeff Michaelis
 
 Every SCPI syntax entry supplied in the November 2020 programming guide is
 available through the embedded JSON file. The catalogue is descriptive; it
 must not be mistaken for a live probe of the firmware or installed options.
 """
+# Creator: Jeff Michaelis
 import fnmatch
 import json
 from importlib import resources

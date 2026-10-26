@@ -1,7 +1,7 @@
 """Exceptions for the Rigol DS8000-R Python driver.
 
-Creator: Jeff Michaelis
 """
+# Creator: Jeff Michaelis
 
 
 class RigolError(Exception):

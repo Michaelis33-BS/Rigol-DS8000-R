@@ -1,4 +1,5 @@
-"""Using the full manual SCPI command catalog. Creator: Jeff Michaelis."""
+"""Using the full manual SCPI command catalog."""
+# Creator: Jeff Michaelis
 from rigol_ds8000r import RigolDS8000R, catalog
 
 # The catalogue is available without attaching a scope.

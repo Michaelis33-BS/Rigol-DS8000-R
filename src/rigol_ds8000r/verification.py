@@ -1,11 +1,11 @@
 """Instrument-wide SCPI acceptance and read-back verification runner.
 
-Creator: Jeff Michaelis
 
 This is a hardware acceptance tool, not an assertion that all options exist.
 It records every form from the bundled command catalogue and explicitly
 classifies unsupported, parameterized, optional, and risky operations.
 """
+# Creator: Jeff Michaelis
 import argparse
 import csv
 import json
@@ -94,7 +94,7 @@ class TestLog:
                 writer.writerows(self.records)
         else:
             with path.open("w", encoding="utf-8") as fp:
-                json.dump({"creator": "Jeff Michaelis", "created_utc": datetime.now(timezone.utc).isoformat(),
+                json.dump({"package": "Rigol-DS8000-R", "created_utc": datetime.now(timezone.utc).isoformat(),
                            "summary": self.summary(), "results": self.records}, fp, indent=2)
 
     def summary(self):
@@ -268,7 +268,7 @@ def run_error_tests(scope, log):
     """
     try:
         scope.clear_status()
-        scope.write(":JEFF:INVALID:COMMAND")
+        scope.write(":UNSUPPORTED:INVALID:COMMAND")
         errors = scope.errors()
         if errors and not any(re.match(r'^\+?0,',x) for x in errors):
             log.add("SCPI negative command", "PASS", "; ".join(errors))
@@ -282,7 +282,7 @@ def run_error_tests(scope, log):
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="DS8000-R complete SCPI inventory/test CLI (creator: Jeff Michaelis)")
+    parser = argparse.ArgumentParser(description="Rigol-DS8000-R complete SCPI inventory/test CLI")
     parser.add_argument("--resource", help="VISA resource string, such as TCPIP0::192.168.1.50::INSTR")
     parser.add_argument("--backend", help="VISA backend, e.g. @py")
     parser.add_argument("--simulate", action="store_true", help="Run the included fake instrument offline")

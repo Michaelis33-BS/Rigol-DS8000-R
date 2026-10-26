@@ -1,7 +1,7 @@
 """Developer-only SCPI inventory extraction from Rigol's 2020 programming guide.
-Creator: Jeff Michaelis.
 Regenerate only when a revised instrument manual is supplied.
 """
+# Creator: Jeff Michaelis
 import argparse
 import fitz, re, json, pathlib
 

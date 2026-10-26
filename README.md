@@ -1,4 +1,4 @@
-# Rigol DS8000-R / DS8034-R Python Driver and Test Suite
+# Rigol-DS8000-R Python Driver and Test Suite
 
 **Creator:** Jeff Michaelis  
 **Version:** 1.0.0  
@@ -57,7 +57,7 @@ If you have multiple Python installations, always use the specific interpreter's
 
 ```powershell
 py -3.8 -m pip install .
-py -3.8 -m pip show rigol-ds8000r-jeff
+py -3.8 -m pip show Rigol-DS8000-R
 ```
 
 If `py -3.8` is unavailable, use the correct installed `python.exe` directly. A Python 3.8-compatible virtual environment is optional; it does not need to be created on a NAS or a mapped network drive.
@@ -65,7 +65,7 @@ If `py -3.8` is unavailable, use the correct installed `python.exe` directly. A 
 To install a **wheel file** from the included `dist` directory (if one was built):
 
 ```powershell
-python -m pip install dist/rigol_ds8000r_jeff-1.0.0-py3-none-any.whl
+python -m pip install dist/rigol_ds8000_r-1.0.0-py3-none-any.whl
 ```
 
 To import in another Python file:
@@ -316,7 +316,7 @@ Only if the instrument is isolated and intentionally being reconfigured, adding 
 | `--include-data` | Allow binary/large-data transfers (can be slow) |
 | `--allow-risky` | Permit additional stateful queries and reversible setting attempts |
 | `--all-indices` | Expand `<n>` families across values 1,2,3,4 |
-| `--error-tests` | Send invalid `:JEFF:INVALID:COMMAND`, require nonzero SCPI error, then clear status |
+| `--error-tests` | Send invalid `:UNSUPPORTED:INVALID:COMMAND`, require nonzero SCPI error, then clear status |
 | `--max-queries N` | Limit count of actual sends/queries, with remaining entries SKIP |
 | `--timeout 10000` | VISA timeout (ms) |
 | `--report name.json` | JSON or CSV result log |
@@ -1093,7 +1093,7 @@ Optional interfaces may not be installed on your particular DS8034-R. Output vol
 
 ## 9. Troubleshooting and boundaries
 
-**Cannot find the module (`ModuleNotFoundError`):** You may have installed the package into a different Python environment. Run `python -m pip show rigol-ds8000r-jeff` and `python -c "import rigol_ds8000r; print(rigol_ds8000r.__version__)"` with the *same* interpreter that executes your test scripts.
+**Cannot find the module (`ModuleNotFoundError`):** You may have installed the package into a different Python environment. Run `python -m pip show Rigol-DS8000-R` and `python -c "import rigol_ds8000r; print(rigol_ds8000r.__version__)"` with the *same* interpreter that executes your test scripts.
 
 **No VISA resources found:** Confirm Rigol LAN/USB mode, firewall settings, cabling, VISA installation, and the selected resource identifier. A `TCPIP0::address::INSTR` session generally requires the appropriate VXI-11 resource service. A socket resource is not interchangeable and usually requires device-specific termination and port selection.
 
@@ -1112,7 +1112,7 @@ Optional interfaces may not be installed on your particular DS8034-R. Output vol
 ```text
 rigol_ds8000r_pkg/
 ├── README.md                      # Installation, examples, all command syntaxes
-├── LICENSE                        # MIT, copyright Jeff Michaelis
+├── LICENSE                        # MIT license
 ├── pyproject.toml                 # Python packaging metadata and CLI entrypoint
 ├── src/rigol_ds8000r/
 │   ├── __init__.py
@@ -1130,6 +1130,6 @@ rigol_ds8000r_pkg/
 └── tools/extract_catalog.py       # Regenerate catalog from a guide PDF (PyMuPDF)
 ```
 
-**Author attribution:** Jeff Michaelis is identified as the creator throughout the source files and package metadata.
+**Creator:** Jeff Michaelis. Attribution is retained in source-code comments and this README; installable distribution metadata uses the project name only.
 
 **License:** MIT for the authored Python package. The Rigol user-supplied programming guide is a separate manufacturer publication and is not included in this distribution.

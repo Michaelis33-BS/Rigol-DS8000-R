@@ -1,4 +1,5 @@
-"""DS8034-R initial programming example. Creator: Jeff Michaelis."""
+"""DS8034-R initial programming example."""
+# Creator: Jeff Michaelis
 from rigol_ds8000r import RigolDS8000R
 
 # Use the VISA resource for YOUR oscilloscope, not the example IP address.

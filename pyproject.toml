@@ -3,13 +3,12 @@ requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "rigol-ds8000r-jeff"
+name = "Rigol-DS8000-R"
 version = "1.0.0"
 description = "Rigol DS8000-R / DS8034-R SCPI control and command verification"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
-authors = [{name = "Jeff Michaelis"}]
 keywords = ["Rigol", "DS8034-R", "oscilloscope", "SCPI", "PyVISA", "instrumentation"]
 dependencies = ["pyvisa>=1.12,<1.15"]
 

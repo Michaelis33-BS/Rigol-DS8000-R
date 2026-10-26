@@ -1,10 +1,10 @@
 """Offline simulation of core DS8000-R SCPI behavior for software CI.
 
-Creator: Jeff Michaelis
 
 This is a deliberately minimal test double, NOT a physics simulation and NOT
 proof that a connected instrument accepts every command in the catalogue.
 """
+# Creator: Jeff Michaelis
 import math
 import re
 import struct
@@ -51,7 +51,7 @@ class SimulatedDS8000R:
         key, value = self._path(command)
         if key == "*CLS":
             self._errors.clear();return
-        if key == ":JEFF:INVALID:COMMAND":
+        if key == ":UNSUPPORTED:INVALID:COMMAND":
             self._errors.append('-113,"Undefined header"');return
         if key in (":RUN", ":STOP", ":SINGLE", ":TFORCE"):
             self.settings[":TRIGGER:STATUS"] = "RUN" if key==":RUN" else "STOP"

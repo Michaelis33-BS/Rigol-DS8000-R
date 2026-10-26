@@ -1,6 +1,5 @@
 """PyVISA instrument driver for Rigol DS8104-R / DS8204-R / DS8034-R.
 
-Creator: Jeff Michaelis
 
 The driver has two control layers:
     * A small, checked set of convenience functions for everyday test code.
@@ -11,6 +10,7 @@ The driver never silently resets an instrument during construction. It uses
 locks around VISA transactions so concurrent Python callers cannot interleave
 writes and reads in one SCPI exchange.
 """
+# Creator: Jeff Michaelis
 import math
 import re
 import threading

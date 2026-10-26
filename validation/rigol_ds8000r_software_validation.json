@@ -1,0 +1,83 @@
+{
+  "package": "Rigol-DS8000-R",
+  "created_utc": "2026-10-26T19:22:13.824705+00:00",
+  "summary": {
+    "PASS": 9,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "results": [
+    {
+      "name": "*IDN?",
+      "status": "PASS",
+      "detail": "RIGOL TECHNOLOGIES,DS8034-R,SIM000000,00.01.01.00",
+      "command": "*IDN?",
+      "elapsed_s": 0.0001,
+      "manual_page": ""
+    },
+    {
+      "name": "*OPC?",
+      "status": "PASS",
+      "detail": "1",
+      "command": "*OPC?",
+      "elapsed_s": 0.0,
+      "manual_page": ""
+    },
+    {
+      "name": ":ACQuire:TYPE?",
+      "status": "PASS",
+      "detail": "NORM",
+      "command": ":ACQuire:TYPE?",
+      "elapsed_s": 0.0,
+      "manual_page": ""
+    },
+    {
+      "name": ":ACQuire:SRATe?",
+      "status": "PASS",
+      "detail": "2.5E9",
+      "command": ":ACQuire:SRATe?",
+      "elapsed_s": 0.0,
+      "manual_page": ""
+    },
+    {
+      "name": ":TIMebase:MAIN:SCALe?",
+      "status": "PASS",
+      "detail": "1E-3",
+      "command": ":TIMebase:MAIN:SCALe?",
+      "elapsed_s": 0.0,
+      "manual_page": ""
+    },
+    {
+      "name": ":TRIGger:MODE?",
+      "status": "PASS",
+      "detail": "EDGE",
+      "command": ":TRIGger:MODE?",
+      "elapsed_s": 0.0,
+      "manual_page": ""
+    },
+    {
+      "name": ":TRIGger:STATus?",
+      "status": "PASS",
+      "detail": "RUN",
+      "command": ":TRIGger:STATus?",
+      "elapsed_s": 0.0,
+      "manual_page": ""
+    },
+    {
+      "name": ":CHANnel1:DISPlay write/readback",
+      "status": "PASS",
+      "detail": "same value re-applied",
+      "command": "",
+      "elapsed_s": 0.0,
+      "manual_page": ""
+    },
+    {
+      "name": "SCPI negative command",
+      "status": "PASS",
+      "detail": "-113,\"Undefined header\"",
+      "command": "",
+      "elapsed_s": 0.0,
+      "manual_page": ""
+    }
+  ]
+}
