@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rigol-ds8000r-jeff"
+version = "1.0.0"
+description = "Rigol DS8000-R / DS8034-R SCPI control and command verification"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [{name = "Jeff Michaelis"}]
+keywords = ["Rigol", "DS8034-R", "oscilloscope", "SCPI", "PyVISA", "instrumentation"]
+dependencies = ["pyvisa>=1.12,<1.15"]
+
+[project.optional-dependencies]
+py = ["pyvisa-py>=0.5,<0.8"]
+test = ["pytest>=7,<9"]
+
+[project.scripts]
+rigol-ds8000r-test = "rigol_ds8000r.verification:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+rigol_ds8000r = ["command_catalog.json"]
